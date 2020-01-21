@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WK2D1: Scope</h1>
+    <script>
+        $ = function() {
+            console.log('it\'s available everywhere');
+        };
+
+        // if (myFirstEmail === 'i_am_me__@hotmail.com') { // block 
+
+        // }
+
+        {
+            //block
+        }
+
+        // object literal
+        const human = { 
+            name: 'User Example',
+            age: 12,
+            hometown: 'Cranbrook'
+        }
+
+        // age variable declared in function block
+        const whatsMyAgeAgain = () => {
+            const age = 10;
+            return `I am ${age}`;
+        }
+
+        for (var i = 0; i < 10; i++) {
+            console.log('hello');
+        }
+        // returns 10 because var is function scoped, and value of i is set globally
+        console.log(i);
+
+        for (let i = 0; i < 10; i++) {
+            console.log('hello');
+        }
+        // returns reference error i is a let variable because let and const are block scoped
+        console.log(i);
+
+    </script>
+        <p>
+        	this variable is declared within the block of this if statement
+        </p>
+        if (dog === 'puppy') {
+            const adorable = true;
+            return adorable;
+        }
+
+        <p>
+            this variable is not declared within a block or a function, so it is considered global
+        </p>
+        <p>
+            const planet = 'Earth';
+        </p>
+        <p>
+            console.log(`We are on the planet ${planet}`);
+        </p>
+
+        <p>JavaScript used to be a function scoped language, but with the ES6 Syntax allowed devs to block scope JavaScript</p>
+</body>
+</html>
