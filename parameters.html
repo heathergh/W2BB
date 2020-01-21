@@ -8,7 +8,53 @@
 </head>
 <body>
     <script>
-        hello();
+        const greeting = name => {
+            let newName = name;
+            newName = "User Example";
+            console.log(`Hello, ${newName}`);
+        };
+
+        const greetMany = (personOne, personTwo, personThree) => {
+            console.log(`Hello ${personOne}, ${personTwo} and ${personThree}`);
+        }
+
+        // returns "Hello UserExample, UserExampleTwo, and undefined"
+        greetMany('User Example', 'User ExampleTwo');
+
+        const addNums = (num1, num2, num3) => {
+            return num1 + num2 + num3;
+        };
+
+        // returns NaN
+        const nums = addNums(123, 123);
+
+        const personArrowFunction = {
+            name: 'Pablo Picasso',
+            greet: () => {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        }
+
+        // accesses window.name 
+        personArrowFunction.greet();
+
+        const personFunctionDeclaration = {
+            name: 'Pablo Picasso',
+            greet: () => {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        }
+
+        // accesses the name property on the personFunctionDeclaration object
+        personFunctionDeclaration.greet();
+
+        const greetEveryone = (...people) => {
+            const lastPerson = people.pop();
+            console.log(`Hello ${people.join(', ')}, and ${lastPerson}`);
+        }
+
+        greetEveryone('user one', 'user two', 'user three', 'user four', 'user five', 'user six');
+
     </script>
 </body>
 </html>
